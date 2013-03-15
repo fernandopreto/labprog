@@ -11,10 +11,10 @@ public class ListaFactory {
 		
 		Lista<T> resultado = null;
 		
-		//implementar
+		//implementar resultado = new ListaDeM<T>();
 		
 		return resultado;
-	}
+	}//nova classe - ListaDeM implements Lista<T>
 	
 	public static ListaFactory getInstancia() {
 		return instancia;
