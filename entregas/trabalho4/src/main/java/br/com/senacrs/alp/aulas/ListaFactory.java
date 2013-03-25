@@ -11,7 +11,7 @@ public class ListaFactory {
 		
 		Lista<T> resultado = null;
 		
-		//implementar resultado = new ListaDeM<T>();
+		resultado = new MinhaLista<T>();//isto é o que foi implementado
 		
 		return resultado;
 	}//nova classe - ListaDeM implements Lista<T>
