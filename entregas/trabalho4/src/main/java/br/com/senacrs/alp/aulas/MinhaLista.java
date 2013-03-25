@@ -20,19 +20,19 @@ public class MinhaLista<T> implements Lista<T> {
 	@Override
 	public void adicionarPosicao(int posicao, T valor) {
 		
-		Nodo<T> nodo = inicio;
-		nodo = nodo.proximo;
-		
-		
+		Nodo<T> nodo = null;
+		Nodo<T> novo = new Nodo<T>();
+		nodo = obterNodoPosicao(posicao -1);
+		novo.proximo = nodo.proximo;
+		nodo.proximo = novo;
+		novo.conteudo = valor;
 	}
 
 	@Override
 	public T obterPrimeiro() {
 		
 		Nodo<T> nodo = null;
-		
 		nodo = obterNodoPosicao(0);
-		
 		return nodo.conteudo;
 	}
 
@@ -68,13 +68,21 @@ public class MinhaLista<T> implements Lista<T> {
 
 	@Override
 	public T removerPosicao(int posicao) {
-		// TODO Auto-generated method stub
-		return null;
+
+		Nodo<T> nodo =	null;
+		Nodo<T> anterior =	new Nodo<T>();
+		nodo = obterNodoPosicao(posicao);
+		anterior = obterNodoPosicao(posicao-1);
+		anterior.proximo = nodo.proximo;
+		nodo.proximo = null;
+		T resultado = nodo.conteudo;
+		return resultado;
 	}
 
 	@Override
 	public void esvaziar() {
-		// TODO Auto-generated method stub
+		
+		inicio.proximo = null;
 		
 	}
 	private Nodo<T> obterNodoPosicao(int posicao){
