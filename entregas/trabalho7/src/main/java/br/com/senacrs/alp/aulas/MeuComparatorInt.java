@@ -1,0 +1,51 @@
+package br.com.senacrs.alp.aulas;
+
+import java.util.Comparator;
+
+public class MeuComparatorInt implements Comparator<Integer> {
+
+	Comparator<Integer> comparator = ComparatorFactory.getInstancia().criarComparatorParesAntesDeImparesCrescente();
+
+	@Override
+	public int compare(Integer o1, Integer o2) {
+
+		int resultado = 0;
+
+		if (o1 == null && o2 == null) {
+
+			resultado = 0;
+
+		} else if (o1 % 2 == 0) {
+
+			if (o1 > o2) {
+
+				resultado = -1;
+
+			} else {
+
+				resultado = 1;
+
+			}
+
+		} else if (o2 % 2 != 0) {
+
+			if (o1 < o2) {
+
+				resultado = 1;
+
+			} else {
+
+				resultado = -1;
+
+			}
+
+		} else {
+
+			resultado = o2.compareTo(o1);
+
+		}
+
+		return resultado;
+
+	}
+}
