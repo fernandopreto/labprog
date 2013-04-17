@@ -9,7 +9,7 @@ public class MeuComparatorSTRING implements Comparator<String> {
 		
 		int resultado = 0;
 		
-		resultado = o2.compareTo(o1);
+		resultado = o2.compareTo(o1);//ou resultado = 0 - o1.compareTo(o2);
 		
 		return resultado;
 	}
