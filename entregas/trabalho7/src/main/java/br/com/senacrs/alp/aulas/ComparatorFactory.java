@@ -6,8 +6,7 @@ public class ComparatorFactory {
 	
 	private static final ComparatorFactory instancia = new ComparatorFactory();
 	
-	private ComparatorFactory() {
-	}
+	
 	
 	public Comparator<Integer> criarComparatorParesAntesDeImparesCrescente() {
 		
