@@ -12,7 +12,7 @@ public class Factory {
 		LeitorArquivos resultado = null;
 		
 		//implementar
-		
+		resultado = new MeuLA();
 		return resultado;
 	}
 	
