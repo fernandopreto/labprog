@@ -12,7 +12,7 @@ public class MeuIS implements InterpretadorStrings{
 			resultado = TIPO_STRING.COMENTARIO;
 		} else if (ehBemFormada(str)) {
 			resultado = TIPO_STRING.BEM_FORMADA;
-		}else  {
+		} else {
 			resultado = TIPO_STRING.MAL_FORMADA;
 		}
 		
