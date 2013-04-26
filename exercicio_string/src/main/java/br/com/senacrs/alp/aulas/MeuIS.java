@@ -6,33 +6,44 @@ public class MeuIS implements InterpretadorStrings{
 	public TIPO_STRING lerString(String str) {
 
 		TIPO_STRING resultado = null;
-		
-		if (ehComentario(str)) {
+		if (str == null) {
+			resultado = TIPO_STRING.MAL_FORMADA;
+		} else if (ehComentario(str)) {
 			resultado = TIPO_STRING.COMENTARIO;
 		} else if (ehBemFormada(str)) {
 			resultado = TIPO_STRING.BEM_FORMADA;
-		}else if (ehMalFormada(str)) {
+		}else  {
 			resultado = TIPO_STRING.MAL_FORMADA;
 		}
 		
 		return resultado;
 	}
-
-	private boolean ehMalFormada(String str) {
-		
-		return false;
-	}
-
+	
 	private boolean ehBemFormada(String str) {
 		
-		return false;
+		boolean resultado = false;
+		String[] strings = null;
+		
+		strings = str.split(SEPARADOR);
+		// 'algo = algo2 = algo3"
+		resultado = (strings.length == 2) && (existeString(strings[0]) && existeString(strings[1]));
+			
+		return resultado;
+	}
+
+	private boolean existeString(String string) {
+		boolean resultado = false;
+		
+		resultado = (string  != null) && !string.trim().isEmpty();
+		
+		return resultado;
 	}
 
 	private boolean ehComentario(String str) {
 		
 		boolean resultado = false;
 		
-		resultado = str.startsWith(PREFIXO_COMENTARIO);
+		resultado = str.trim().startsWith(PREFIXO_COMENTARIO);
 		
 		return resultado;
 	}

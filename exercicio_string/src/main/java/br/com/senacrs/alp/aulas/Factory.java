@@ -12,7 +12,7 @@ public class Factory {
 		InterpretadorStrings resultado = null;
 		
 		//implementar
-		
+		resultado = new MeuIS();
 		return resultado;
 	}
 	
