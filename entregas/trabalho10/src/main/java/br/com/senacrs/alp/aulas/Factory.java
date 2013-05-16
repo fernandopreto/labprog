@@ -11,7 +11,7 @@ public class Factory {
 	
 		ListaConteudoDiretorio resultado = null;
 		
-		resultado = new MinhaLCD();
+		//implementar
 		
 		return resultado;
 	}
