@@ -6,7 +6,10 @@ import java.io.IOException;
 import java.io.Reader;
 
 public class MinhaValidacao implements ValidarRequisicaoGet{
-
+	
+	private static final String GET = "GET / http/1.1";
+	private static final String HOST = "Host: www.google.com";
+	
 	@Override
 	public boolean ehRequisicaoGetValida(Reader requisicao) {
 		
