@@ -36,8 +36,9 @@ public class ObterPathRequisicaoGetTest {
 	@Test
 	public void testCaminhoAbsolutoNull() {
 
-		obj.caminhoAbsoluto(null);
 		exception.expect(IllegalArgumentException.class);
+		obj.caminhoAbsoluto(null);
+		
 	}
 
 	@Test
@@ -49,7 +50,7 @@ public class ObterPathRequisicaoGetTest {
 		String abs = null;
 
 		path = "/";
-		abs = PWD + path.replaceAll("/", File.separator);
+		abs = PWD + path.replace("/", File.separator);
 		requisicao = getRequisicao(path);
 		resultado = obj.caminhoAbsoluto(requisicao);
 		Assert.assertEquals(path, abs, resultado);
