@@ -22,11 +22,8 @@ public class meuCriarValidacao implements ObterCabecalhoRequisicaoGet {
 	
 	
 	public meuCriarValidacao(ArquivoConfiguracao config) {
-		
-		if(config==null){
-			throw new IllegalArgumentException();
-		}
 		this.config = config;
+		
 		
 	}
 
